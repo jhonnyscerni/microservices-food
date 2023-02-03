@@ -27,7 +27,6 @@ A camada da API injetará e usará a porta de entrada usando injeção de depend
 As chamadas de método serão delegadas à implementação, que também vão está na camada de domínio. Em termos de arquitetura hexagonal, a camada de API que usa a porta de entrada é um adaptador primário.
 É um adaptador porque pode ser facilmente alterado sem tocar na camada de domínio. Graças ao uso da porta de entrada.
 O adaptador da camada de dados na camada de dados era um adaptador secundário na arquitetura limpa
-
 ------
 <b>Serviço Externo</br></b>
 Digamos que você precise ter uma chamada de serviço externa na camada de negócios.
@@ -47,11 +46,12 @@ Digamos que este adaptador usará Kafka.
 No entanto, como mencionado, quando você deseja alterar o adaptador com qualquer outra tecnologia de mensagens
 Será uma operação indolor graças à arquitetura limpa que você usa.
 Assim, no futuro, você pode facilmente alterar o barramento de mensagens do Kafka para qualquer outra solução.
-----
 
+------
 No final, a lógica central será o componente mais independente e estável desta aplicação.
 E permitirá desenvolver e testar a lógica de negócios de forma independente.
 Domain - (Independent & Stable)
+
 
 Visualize dependencies:
 https://github.com/ferstl/depgraph-maven-plugin
