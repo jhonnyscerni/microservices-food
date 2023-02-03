@@ -18,7 +18,6 @@ Os registros do Bean serão no modulo container.
 
 As portas de saída e o implementador dessas portas como adaptadores secundários.
 Em uma arquitetura limpa
-
 -----
 API - Injeta a interface do dominio</br>
 A porta de entrada pode ser chamada como porta da camada de domínio.(Verde-domain "Domain Layer Interface")
@@ -28,6 +27,7 @@ A camada da API injetará e usará a porta de entrada usando injeção de depend
 As chamadas de método serão delegadas à implementação, que também vão está na camada de domínio. Em termos de arquitetura hexagonal, a camada de API que usa a porta de entrada é um adaptador primário.
 É um adaptador porque pode ser facilmente alterado sem tocar na camada de domínio. Graças ao uso da porta de entrada.
 O adaptador da camada de dados na camada de dados era um adaptador secundário na arquitetura limpa
+
 ------
 <b>Serviço Externo</br></b>
 Digamos que você precise ter uma chamada de serviço externa na camada de negócios.
