@@ -20,7 +20,7 @@ As portas de saída e o implementador dessas portas como adaptadores secundário
 Em uma arquitetura limpa
 
 -----
-<b>API - Injeta a interface do dominio</br></b>
+API - Injeta a interface do dominio</br>
 A porta de entrada pode ser chamada como porta da camada de domínio.(Verde-domain "Domain Layer Interface")
 Esta porta também é uma interface, quando pensamos em Java, e exigirá um implementador, e
 ser implementado na própria camada de domínio. ("Domain Layer Adapter")
