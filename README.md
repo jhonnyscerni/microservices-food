@@ -14,11 +14,11 @@ Para usar a interface durante a codificação na camada de coominio é preciso u
 
 Outra questão é para usarmos a camada de negócio e a camada de dados juntas é preciso usar um outro componente.
 Exemplo na imagem "CONTAINER" ele vai possuir a classe principal do Spring boot. Nesse componente vai ter uma dependencia de negocio, camada de dados e também API.
-Os registros do Bean serão no modulo container.
-
+Os registros do Bean serão no modulo container
 As portas de saída e o implementador dessas portas como adaptadores secundários.
 Em uma arquitetura limpa
------
+
+----
 API - Injeta a interface do dominio</br>
 A porta de entrada pode ser chamada como porta da camada de domínio.(Verde-domain "Domain Layer Interface")
 Esta porta também é uma interface, quando pensamos em Java, e exigirá um implementador, e
@@ -27,7 +27,8 @@ A camada da API injetará e usará a porta de entrada usando injeção de depend
 As chamadas de método serão delegadas à implementação, que também vão está na camada de domínio. Em termos de arquitetura hexagonal, a camada de API que usa a porta de entrada é um adaptador primário.
 É um adaptador porque pode ser facilmente alterado sem tocar na camada de domínio. Graças ao uso da porta de entrada.
 O adaptador da camada de dados na camada de dados era um adaptador secundário na arquitetura limpa
-------
+
+
 <b>Serviço Externo</br></b>
 Digamos que você precise ter uma chamada de serviço externa na camada de negócios.
 Então eu tenho um serviço externo aqui. De acordo com o princípio de arquitetura limpa que acabei de aplicar
@@ -37,7 +38,8 @@ Vou adicionar uma porta na camada de negócios.
 Desta vez vou chamá-lo como porta de serviço externa.(External Service Port)
 E então implemente no serviço externo com um adaptador, que é um adaptador secundário em hexagonal
 termos de arquitetura. (External Service Adapter " Secondary")
-------
+
+
 <b>Broker Messagens</br></b>
 Em seguida, podemos adicionar um componente de mensagens.
 Novamente aplicando o princípio de inversão de dependência Vou adicionar uma interface de porta de mensagens na camada de negócios. (Messaging Port)
@@ -57,4 +59,7 @@ Visualize dependencies:
 https://github.com/ferstl/depgraph-maven-plugin
 mvn com.github.ferstl:depgraph-maven-plugin:aggregate -DcreateImage=true -DreduceEdges=false -Dscope=compile "-Dincludes=com.food.ordering.system*:*"
 ![Estrutura](imgs/estrutura.png)
+
+
+
 
