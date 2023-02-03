@@ -1,3 +1,5 @@
+curso: Microservices: Clean Architecture, DDD, SAGA, Outbox & Kafka
+
 Os Microserviços foram baseados em uma arquitetura hexagonal e conceitos de arquitetura Limpa.
 ![Estrutura](imgs/clean-arch-project.png)
 
