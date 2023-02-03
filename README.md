@@ -1,5 +1,4 @@
 Os Microserviços foram baseados em uma arquitetura hexagonal e conceitos de arquitetura Limpa.
-Exemplo do Order-Service
 ![Estrutura](imgs/clean-arch-project.png)
 
 A interface de camadas de dados (Data Layer Interface) é a definição de porta de saida que vai precisar ser implementada por um adaptador.(Data Layer Adapter)
@@ -26,15 +25,13 @@ A porta de entrada pode ser chamada como porta da camada de domínio.(Verde-doma
 Esta porta também é uma interface, quando pensamos em Java, e exigirá um implementador, e
 ser implementado na própria camada de domínio. ("Domain Layer Adapter")
 A camada da API injetará e usará a porta de entrada usando injeção de dependência.</b>Interface do domain da porta de entrada</b>
-As chamadas de método serão delegadas à implementação, que também vão está na camada de domínio.
-Em termos de arquitetura hexagonal, a camada de API que usa a porta de entrada é um adaptador primário.
+As chamadas de método serão delegadas à implementação, que também vão está na camada de domínio. Em termos de arquitetura hexagonal, a camada de API que usa a porta de entrada é um adaptador primário.
 É um adaptador porque pode ser facilmente alterado sem tocar na camada de domínio. Graças ao uso da porta de entrada.
 O adaptador da camada de dados na camada de dados era um adaptador secundário na arquitetura limpa
 ------
 <b>Serviço Externo</br></b>
 Digamos que você precise ter uma chamada de serviço externa na camada de negócios.
-Então eu tenho um serviço externo aqui.
-De acordo com o princípio de arquitetura limpa que acabei de aplicar
+Então eu tenho um serviço externo aqui. De acordo com o princípio de arquitetura limpa que acabei de aplicar
 Como podemos integrar esse serviço externo no aplicativo?
 Novamente.
 Vou adicionar uma porta na camada de negócios.
@@ -44,8 +41,7 @@ termos de arquitetura. (External Service Adapter " Secondary")
 ------
 <b>Broker Messagens</br></b>
 Em seguida, podemos adicionar um componente de mensagens.
-Novamente aplicando o princípio de inversão de dependência.
-Vou adicionar uma interface de porta de mensagens na camada de negócios. (Messaging Port)
+Novamente aplicando o princípio de inversão de dependência Vou adicionar uma interface de porta de mensagens na camada de negócios. (Messaging Port)
 E implemente-o com um adaptador de mensagens no componente de mensagens. (Messaging Adapter)
 Digamos que este adaptador usará Kafka.
 No entanto, como mencionado, quando você deseja alterar o adaptador com qualquer outra tecnologia de mensagens
